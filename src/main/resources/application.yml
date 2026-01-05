@@ -1,9 +1,8 @@
 spring:
   application:
     name: TransactionsAndConcurrency
-
   datasource:
-    url: jdbc:h2:mem:db # In-memory database
+    url: jdbc:h2:mem:db;LOCK_TIMEOUT=10000 # In-memory database
     driverClassName: org.h2.Driver
     username: admin
     password: "admin"
@@ -20,3 +19,9 @@ spring:
 
 server:
   port: 8080
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
